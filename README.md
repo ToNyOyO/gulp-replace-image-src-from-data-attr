@@ -15,15 +15,22 @@ Install package with NPM and add it to your development dependencies:
 
 ```javascript
 var rep = require('gulp-replace-image-src-from-data-attr');
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-gulp.task('replace', function() {
-  gulp.src('*.html')
-    .pipe(rep({
-      keepOrigin : false
-    }))
-    .pipe(gulp.dest('dist'));
-});
+function replace(cb) {
+
+    return gulp
+        .src('**/*.html')
+        .pipe(rep({
+            keepOrigin : false
+        }))
+        .pipe(gulp.dest('dist/'));
+
+    //cb();
+}
+
+exports.replace = replace;
+exports.default = replace;
 ```
 If the original HTML is like this:
 ```html
