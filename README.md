@@ -29,10 +29,13 @@ The original HTML is like:
 ```html
 <body>
   <div class="icon1">
-    <img src="/public/icon4.png" data-local-src="images/icon4.png" />
+    <img src="/public/iconA.png" data-local-src="images/icon4.png" />
   </div>
   <div class="icon1_1">
-    <img src="../icon4-1.png" data-local-src="images/icon4-1.png" />
+    <img src="../iconB.png" data-local-src="images/icon4-1.png" />
+  </div>
+  <div class="icon1_1">
+    <img src="http://a.cdn.com/iconC.png" data-local-src="images/icon4-2.png" />
   </div>
 </body>
 ```
@@ -40,10 +43,13 @@ After replaced, it will be like:
 ```html
 <body>
   <div class="icon1">
-    <img src="images/icon4.png" />
+    <img src="images/icon1.png" />
   </div>
   <div class="icon1_1">
-    <img src="images/icon4-1.png" />
+    <img src="images/icon1-1.png" />
+  </div>
+  <div class="icon1_1">
+    <img src="http://a.cdn.com/icon1-2.png" />
   </div>
 </body>
 ```
