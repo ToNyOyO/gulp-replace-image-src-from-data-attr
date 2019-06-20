@@ -1,0 +1,41 @@
+{
+  "name": "gulp-replace-image-src-from-data-attr",
+  "version": "1.0.0",
+  "description": "replace the \"src\" attribute with specific path of \"img\" in \"data-local-src\" attribute of HTML files",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "gulp-util": "^3.0.8",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "mocha": "^5.2.0",
+    "require": "^2.4.20"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "html",
+    "image",
+    "src",
+    "path",
+    "url",
+    "cdn"
+  ],
+  "author": "Anthony Knibb <anthony.knibb@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr/issues"
+  },
+  "homepage": "https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr#readme",
+  "directories": {
+    "test": "test"
+  }
+}
