@@ -2,7 +2,7 @@
 
 > Replace the \"src\" attribute of \<img\> tags with specific path from the \"data-local-src\" attribute in HTML files. 
 
-It is very easy to replace the test IMG "src" with an alternative "src".
+It is very easy to replace the IMG "src" with an alternative "src" throughout your project HTML file.
 
 ## Installation
 
@@ -61,3 +61,5 @@ Type:`Boolean`
 Default:`false`
 
 If the value is `true`, then the new "src" is prepended to the origin "src".
+
+#### (Shout out to the maker of "gulp-replace-image-src" which was the basis for this tool) 
