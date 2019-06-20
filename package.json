@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr.git"
+    "url": "git+https://github.com/ToNyOyO/gulp-replace-image-src-from-data-attr.git"
   },
   "keywords": [
     "gulpplugin",
@@ -32,9 +32,9 @@
   "author": "Anthony Knibb <anthony.knibb@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr/issues"
+    "url": "https://github.com/ToNyOyO/gulp-replace-image-src-from-data-attr/issues"
   },
-  "homepage": "https://github.com/[ACCOUNT NAME]/gulp-replace-image-src-from-data-attr#readme",
+  "homepage": "https://github.com/ToNyOyO/gulp-replace-image-src-from-data-attr#readme",
   "directories": {
     "test": "test"
   }
