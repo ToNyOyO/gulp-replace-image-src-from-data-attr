@@ -25,7 +25,7 @@ gulp.task('replace', function() {
     .pipe(gulp.dest('dist'));
 });
 ```
-The original HTML is like:
+If the original HTML is like this:
 ```html
 <body>
   <div class="icon1">
@@ -39,7 +39,7 @@ The original HTML is like:
   </div>
 </body>
 ```
-After replaced, it will be like:
+After running it will be like this:
 ```html
 <body>
   <div class="icon1">
