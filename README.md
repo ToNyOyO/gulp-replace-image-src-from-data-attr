@@ -35,27 +35,27 @@ exports.default = replace;
 If the original HTML is like this:
 ```html
 <body>
-  <div class="icon1">
-    <img src="/public/iconA.png" data-local-src="images/icon4.png" />
+  <div class="anIconClass">
+    <img src="/public/iconA.png" data-local-src="images/icon1.png" />
   </div>
-  <div class="icon1_1">
-    <img src="../iconB.png" data-local-src="images/icon4-1.png" />
+  <div class="anotherClass">
+    <img src="../iconB.png" data-local-src="images/icon1-1.png" />
   </div>
-  <div class="icon1_1">
-    <img src="http://a.cdn.com/iconC.png" data-local-src="images/icon4-2.png" />
+  <div>
+    <img src="http://a.cdn.com/iconC.png" data-local-src="images/icon1-2.png" />
   </div>
 </body>
 ```
 After running it will be like this:
 ```html
 <body>
-  <div class="icon1">
+  <div class="anIconClass">
     <img src="images/icon1.png" />
   </div>
-  <div class="icon1_1">
+  <div class="anotherClass">
     <img src="images/icon1-1.png" />
   </div>
-  <div class="icon1_1">
+  <div>
     <img src="http://a.cdn.com/icon1-2.png" />
   </div>
 </body>
