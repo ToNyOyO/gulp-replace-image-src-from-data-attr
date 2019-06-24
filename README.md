@@ -17,7 +17,7 @@ Install package with NPM and add it to your development dependencies:
 var rep = require('gulp-replace-image-src-from-data-attr');
 const gulp = require('gulp');
 
-function replace(cb) {
+function replace() {
 
     return gulp
         .src('**/*.html')
@@ -26,7 +26,6 @@ function replace(cb) {
         }))
         .pipe(gulp.dest('dist/'));
 
-    //cb();
 }
 
 exports.replace = replace;

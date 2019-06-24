@@ -1,5 +1,5 @@
 'use strict';
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var through = require('through2');
 var cheerio = require('cheerio');
 var uriRegex = new RegExp("(http:|ftp:|https:)?//.+");
@@ -18,7 +18,7 @@ module.exports = function(opts) {
         }
 
         if (file.isStream()) {
-            this.emit('error', new gutil.PluginError('Streaming not supported'));
+            this.emit('error', new PluginError('replace', 'Streaming not supported', { showStack: true }));
             return callback();
         }
 
@@ -43,7 +43,7 @@ module.exports = function(opts) {
 
             var output = $.html();
 
-            file.contents = new Buffer(output);
+            file.contents = new Buffer.from(output);
 
             return callback(null, file);
         }
