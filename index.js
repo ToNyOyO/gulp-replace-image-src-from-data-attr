@@ -25,6 +25,7 @@ module.exports = function(opts) {
         if (file.isBuffer()) {
             var $ = cheerio.load(file.contents.toString('UTF-8'), { decodeEntities: false } );
             var images = $('img');
+            var changeCounter = 0;
             images.each(function() {
                 if (this.attribs['src'] && this.attribs['data-local-src']) {
                     var imageSrc = this.attribs['src'];
@@ -36,14 +37,16 @@ module.exports = function(opts) {
                         }
                         this.attribs['src'] = prependSrc + localImageSrc;
                     }
+                    changeCounter++;
                 }
             });
 
             images.removeAttr('data-local-src').html();
 
-            var output = $.html();
-
-            file.contents = new Buffer.from(output);
+            if (changeCounter > 0) {
+                var output = $.html();
+                file.contents = new Buffer.from(output);
+            }
 
             return callback(null, file);
         }
