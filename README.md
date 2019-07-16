@@ -13,6 +13,8 @@ Install package with NPM and add it to your development dependencies:
 
 ## Usage
 
+#### Example 1:
+Replace images and copy the new file to a folder in the root called `dist`. 
 ```javascript
 var rep = require('gulp-replace-image-src-from-data-attr');
 const gulp = require('gulp');
@@ -26,6 +28,29 @@ function replace() {
         }))
         .pipe(gulp.dest('dist/'));
 
+}
+
+exports.replace = replace;
+exports.default = replace;
+```
+#### Example 2:
+Using the [gulp-rename](https://www.npmjs.com/package/gulp-rename) package to create the file in the _exising directory_ and adding `-dist` to the end of the filename:
+```javascript
+var rep = require('gulp-replace-image-src-from-data-attr');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+
+function replace() {
+
+    return gulp
+        .src('gtm_*/*.html')
+        .pipe(rep({
+            keepOrigin : false
+        }))
+        .pipe(rename(function(path){
+            path.basename += '-dist';
+        }))
+        .pipe(gulp.dest('.'));
 }
 
 exports.replace = replace;
