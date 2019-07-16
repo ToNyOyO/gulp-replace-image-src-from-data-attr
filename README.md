@@ -43,7 +43,7 @@ const rename = require('gulp-rename');
 function replace() {
 
     return gulp
-        .src('gtm_*/*.html')
+        .src('**/*.html')
         .pipe(rep({
             keepOrigin : false
         }))
