@@ -56,6 +56,7 @@ function replace() {
 exports.replace = replace;
 exports.default = replace;
 ```
+## Result
 If the original HTML is like this:
 ```html
 <body>
