@@ -1,7 +1,7 @@
 {
   "name": "gulp-replace-image-src-from-data-attr",
-  "version": "1.0.7",
-  "description": "replace the \"src\" attribute with specific path of \"img\" in \"data-local-src\" attribute of HTML files",
+  "version": "1.0.8",
+  "description": "replace the \"src\" attribute with specific path of \"img\" in \"data-local-src\" attribute of HTML files (or any attribute you specify)",
   "main": "index.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",

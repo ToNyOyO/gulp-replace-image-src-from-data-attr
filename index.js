@@ -5,9 +5,12 @@ var cheerio = require('cheerio');
 var uriRegex = new RegExp("(http:|ftp:|https:)?//.+");
 
 module.exports = function(opts) {
-    var keepOrigin = false;
+    var keepOrigin = false,
+        sourceAttr = 'data-local-src';
+
     if (opts) {
         keepOrigin = opts.keepOrigin || false;
+        sourceAttr = opts.sourceAttr || 'data-local-src';
     }
 
     return through.obj(function(file, enc, callback) {
@@ -27,9 +30,9 @@ module.exports = function(opts) {
             var images = $('img');
             var changeCounter = 0;
             images.each(function() {
-                if (this.attribs['src'] && this.attribs['data-local-src']) {
+                if (this.attribs['src'] && this.attribs[sourceAttr]) {
                     var imageSrc = this.attribs['src'];
-                    var localImageSrc = this.attribs['data-local-src'];
+                    var localImageSrc = this.attribs[sourceAttr];
                     if(imageSrc && localImageSrc) {
                         var prependSrc = '';
                         if (keepOrigin && imageSrc.match(uriRegex)) {
@@ -41,7 +44,7 @@ module.exports = function(opts) {
                 }
             });
 
-            images.removeAttr('data-local-src').html();
+            images.removeAttr(sourceAttr).html();
 
             if (changeCounter > 0) {
                 var output = $.html();

@@ -1,7 +1,7 @@
 # gulp-replace-image-src-from-data-attr [![Build Status](https://travis-ci.org/ToNyOyO/gulp-replace-image-src-from-data-attr.svg?branch=master)](https://travis-ci.org/ToNyOyO/gulp-replace-image-src-from-data-attr)
 
 
-> Replace the \"src\" attribute of \<img\> tags with specific path from the \"data-local-src\" attribute in HTML files. 
+> Replace the \"src\" attribute of \<img\> tags with specific path from the \"data-local-src\" attribute in HTML files (or any attribute you specify). 
 
 It is very easy to replace the IMG "src" with an alternative "src" throughout your project HTML file.
 
@@ -99,5 +99,13 @@ Type:`Boolean`
 Default:`false`
 
 If the value is `true`, and the the "src" starts with **"http:|ftp:|https:|//"**, then the new "src" is prepended to the origin "src".
+
+#### options.sourceAttr
+
+Type:`String`
+
+Default:`'data-local-src'`
+
+For added flexibility you can name any attribute here, whether it's a `data-` or `alt` or whatever you fancy. It's your code.   
 
 #### (Shout out to the maker of "gulp-replace-image-src" which was the basis for this tool) 
